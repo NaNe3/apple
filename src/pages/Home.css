@@ -65,10 +65,13 @@
 }
 
 .med-img-view {
+    position: relative;
     margin-right: 20px;
     width: 100%;
-    min-height: 600px;
     background-color: black;
 }
 
+.med-img-view img {
+    width: 100%;
+}
 

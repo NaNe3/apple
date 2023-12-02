@@ -19,14 +19,14 @@ function Home() {
 
             <div className='med-container'>
                 <div className='med-img-view'>
-                    <img src='./src/assets/'></img>
+                    <img src='./src/assets/iphone-pro.png'></img>
 
                     <div className='med-info'>
 
                     </div>
                 </div>
                 <div className='med-img-view'>
-                    <img src='./src/assets/'></img>
+                    <img src='./src/assets/iphone-pro.png'></img>
 
                     <div className='med-info'>
 
