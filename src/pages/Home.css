@@ -68,7 +68,39 @@
     position: relative;
     margin-right: 20px;
     width: 100%;
-    background-color: black;
+}
+
+.med-info {
+    position: absolute;
+
+    width: 100%;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.med-info h1 {
+    font-size: 43px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.med-info p {
+    font-size: 22px;
+    line-height: 0px;
+}
+
+.med-info a { color: #0266CC; text-decoration: none; cursor: pointer; }
+.med-info a:hover { text-decoration: underline; }
+
+.med-info span {
+    margin-right: 25px;
+    color: #0266CC;
+}
+
+.med-info span:last-child {
+    margin-right: 0px;
 }
 
 .med-img-view img {
