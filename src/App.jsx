@@ -13,7 +13,7 @@ function App() {
     <div id='parent'>
       <BrowserRouter>
 
-        <NavBar></NavBar>
+        <NavBar />
 
         <Routes>
           <Route path="/" element={ <Home /> }></Route>
@@ -21,7 +21,7 @@ function App() {
           <Route path="/Macbooks" element={ <Macbooks /> }></Route>
         </Routes>
 
-        <Footer></Footer>
+        <Footer />
 
       </BrowserRouter>
       

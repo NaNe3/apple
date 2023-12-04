@@ -67,7 +67,7 @@
 
 .slide {
     min-width: 100%;
-    padding: 0px 150px;
+    padding: 0px 140px;
     overflow-x: auto;
     white-space: nowrap;
     justify-content: space-around;
@@ -100,7 +100,7 @@
 
 .slide-item {
     display: inline-block;
-    margin: 10px 20px 10px 0px;
+    margin: 20px 10px 20px 10px;
     width: 480px;
     height: 520px;
     box-shadow: 0px 0px 2px 5px rgba(190, 190, 190, 0.1);
@@ -111,7 +111,8 @@
 }
 
 .slide-item:hover {
-    width: 500px;
-    margin: -10px 10px 0px -10px;
+    width: 507px;
+    height: 555px;
+    margin: -20px -3px 0px -3px;
     box-shadow: 0px 0px 4px 5px rgba(190, 190, 190, 0.4);
 }
