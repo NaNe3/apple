@@ -67,7 +67,7 @@ nav {
   padding-left: 0px;
   padding-inline-start: 0px;
   height: 100%;
-
+  transition: 0.2s;
 }
 
 ul {
@@ -81,6 +81,43 @@ nav img {
   padding: 0;
   align-items: center;
   margin: 6px 18px 0px 18px;
+}
+
+#dropdown-item-container {
+  display: flex;
+  width: 980px;
+  margin: 35px auto;
+  color: black;
+}
+
+.drop-item {
+  display: block;
+  margin-right: 40px;
+}
+
+.drop-item:first-of-type {
+  margin-right: 100px;
+}
+
+.drop-item:first-of-type p {
+  font-size: 24px;
+  line-height: 15px;
+}
+
+.drop-item h2 {
+  font-size: 12px;
+  font-weight: 300;
+  color: grey;
+  cursor: pointer;
+}
+
+.drop-item h2:not(:first-of-type) { margin-bottom: 100px; }
+
+.drop-item p {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 12px;
+  cursor: pointer;
 }
 
 footer {
@@ -156,7 +193,7 @@ footer {
   height: 100%;
   background-color: rgba(0, 0, 0, 0);
   backdrop-filter: blur(0px);
-  transition: 0.5s;
+  transition: 0.4s;
 }
 
 .modal.visible {
@@ -172,7 +209,7 @@ footer {
   width: 100%;
   height: 0px;
   overflow: hidden;
-  transition: 0.5s;
+  transition: 0.4s;
 }
 
 .dropdown-container.visible {

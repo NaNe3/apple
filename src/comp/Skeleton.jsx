@@ -3,6 +3,96 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 
 function NavBar() {
+    const dropInfo = [
+        {
+            id: "Store",
+            headers: ["Shop", "Quick Links", "Shop Special Stores"],
+            links: [["Shop the Latest", "Mac", "iPad", "iPhone", "Apple Watch", "Accessories"], ["Community", "Check Coverage", "Repair", "Contact Us"], ["Get AppleCare+", "Apple ID & Password", "Billing & Subscription", "Find My", "Accessibility"]]
+        },
+        {
+            id: "Mac",
+            headers: ["Explore Mac", "Shop Mac", "More from Mac"],
+            links: [["Explore All mac", "Macbook Air", "Macbook Pro", "iMac", "Mac mini", "Mac Studio", "Mac Pro", "Displays"], ["Shop Mac", "Mac Accessories", "Apple Trade In", "Financing"], ["Mac Support", "AppleCare+ for Mac", "macOS Sonoma", "Apps by Apple", "Continuity", "iCloud+", "Mac for Business", "Education"]]
+        }, 
+        {
+            id: "iPad",
+            headers: ["Explore iPad", "Shop iPad", "More from iPad"],
+            links: [["Explore All iPad", "iPad Pro", "iPad Air", "iPad", "iPad mini", "Apple Pencil", "Keyboards"], ["Shop iPad", "iPad Accessories", "Apple Trade In", "Financing"], ["iPad Support", "AppleCare+ for iPad", "iPadOS 17", "Apps by Apples", "iCloud+", "Education"]]
+        },
+        {
+            id: "iPhone",
+            headers: ["Explore iPhone", "shop iPhone", "More from iPhone"],
+            links: [["Explore All iPhone", "iPhone 15 Pro", "iPhone 15", "iPhone 14", "iPhone 13", "iPhone SE"], ["Shop iPhone", "iPhone Accessories", "Apple Trade In", "Carrier Deals at Apple", "Financing"], ["iPhone Support", "AppleCare+ for iPhone", "iOS 17", "Apps by Apple", "iPhone Privacy", "iCloud+", "Wallet, Pay, Card", "Siri"]]
+        },
+        {
+            id: "Watch",
+            headers: ["Explore Watch", "Shop Watch", "More from Watch"],
+            links: [["Explore All Apple Watch", "Apple Watch Series 9", "Apple Watch Ultra 2", "Apple Watch SE", "Apple Watch Nike", "Apple Watch Hermes"], ["Shop Apple Watch", "Apple Watch Studio", "Apple Watch Bands", "Apple Watch Accessories", "Applre Trade In", "Financing"], ["Apple Watch Support", "AppleCare+", "watchOS 10", "Apps by Apple", "Apple Fitness"]]
+        },
+        {
+            id: "AirPods",
+            headers: ["Explore AirPods", "Shop AirPods", "More from AirPods"],
+            links: [["Explore All AirPods", "AirPods Pro 2nd Generation", "AirPods 2nd Generation", "AirPods 3rd Generation", "AirPods Max"], ["Shop AirPods", "AirPods Accessories"], ["AirPods Support", "AppleCare+ for Headphones", "Apple Music"]]
+        },
+        {
+            id: "TV &amp; Home",
+            headers: ["Explore TV & Home", "Shop TV & Home", "More from TV & Home"],
+            links: [["Explore TV & Home", "Apple TV 4K", "HomePod", "HomePod mini"], ["Shop Apple TV 4K", "Shop HomePod", "Shop HomePod mini", "Shop Siri Remote", "TV & Home Accessories"], ["Apple TV Support", "HomePod Support", "AppleCare+", "Apple TV app", "Apple TV+", "Home app", "Apple Music", "Siri", "AirPlay"]]
+        },
+        {
+            id: "Entertainment",
+            headers: ["Explore Entertainment", "Support"],
+            links: [["Explore Entertainment", "Apple One", "Apple TV+", "Apple Music", "Apple Arcade", "Apple Fitness+", "Apple News+", "Apple Podcasts", "Apple Books", "App Store"], ["Apple TV+ Support", "Apple Music Support"]]
+        },
+        {
+            id: "Accessories",
+            headers: ["Shop Accessories", "Explore Accessories"],
+            links: [["Shop All Accessories", "Mac", "iPad", "iPhone", "Apple Watch", "AirPods", "TV & Home"], ["Shop Holiday Gifts", "Made by Apple", "Beats by Dr. Dre", "AirTag"]]
+        },
+        {
+            id: "Support",
+            headers: ["Explore Support", "Get Help", "Helpful Topics"],
+            links: [["iPhone", "Mac", "iPad", "Watch", "AirPods", "Music", "TV"], ["Community", "Check Coverage", "Repair", "Contact Us"], ["Get AppleCare+", "Apple ID & Password", "Billing & Subscriptions", "Find My", "Accessibility"]]
+        }
+    ]
+
+    const handleDropdownItems = (e) => {
+        var id = e.target.children[0].innerHTML;
+        var index = -1;
+        for (var i=0; i<dropInfo.length; i++) {
+            if (dropInfo[i].id == id) {
+                index = i
+                break
+            }
+        }
+
+        if (index != -1) {
+            document.getElementById("dropdown-item-container").innerHTML = ''
+
+
+            for (var i=0; i<dropInfo[index].links.length; i++) {
+                var div = document.createElement("div")
+                div.className = "drop-item safe"
+
+                var head = document.createElement("h2")
+                head.innerHTML = dropInfo[index].headers[i]
+                head.className = "safe"
+                
+                div.appendChild(head)
+
+                for (var j=0; j<dropInfo[index].links[i].length; j++) {
+                    var p = document.createElement("p")
+                    p.innerHTML = dropInfo[index].links[i][j]
+                    p.className = "safe"
+
+                    div.appendChild(p);
+                }
+
+                document.getElementById("dropdown-item-container").appendChild(div)
+            }
+        }
+    }
+
     const [dropdown, setDropdown] = useState(false)
     const drop = () => {
         document.addEventListener("mousemove", checkMouse)
@@ -15,13 +105,8 @@ function NavBar() {
         if (targetClass.includes("safe") == false) {
             setDropdown(false)
             document.removeEventListener("mouseover", checkMouse)
-            // setTimeout(() => {
-            //     document.getElementsByClassName('modal')[0].style.display = "none"
-            // }, 600)
-            // document.getElementsByClassName('modal')[0].style.display = "none"
         } else if (dropdown == false) {
             setDropdown(true)
-            // document.getElementsByClassName('modal')[0].style.display = "block"
         }
     }
 
@@ -31,17 +116,17 @@ function NavBar() {
                 <Link to="/"><img src={'./src/assets/apple.png'} /></Link>
 
                 <ul className='links safe' onMouseOver={ dropdown ? console.log("already open fool") : drop }>
-                    <li className='safe'><Link className='safe' to="/Store">Store</Link></li>
-                    <li className='safe'><Link className='safe' to="/Macbooks">Mac</Link></li>
-                    <li className='safe'><Link className='safe' to="">iPad</Link></li>
-                    <li className='safe'><Link className='safe' to="">iPhone</Link></li>
-                    <li className='safe'><Link className='safe' to="">Watch</Link></li>
-                    <li className='safe'><Link className='safe' to="">Vision</Link></li>
-                    <li className='safe'><Link className='safe' to="">AirPods</Link></li>
-                    <li className='safe'><Link className='safe' to="">TV & Home</Link></li>
-                    <li className='safe'><Link className='safe' to="">Entertainment</Link></li>
-                    <li className='safe'><Link className='safe' to="">Accessories</Link></li>
-                    <li className='safe'><Link className='safe' to="">Support</Link></li>
+                    <li className='safe' onMouseOver={handleDropdownItems}><Link onMouseOver={handleDropdownItems} className='safe' to="/Store">Store</Link></li>
+                    <li className='safe' onMouseOver={handleDropdownItems}><Link onMouseOver={handleDropdownItems} className='safe' to="/Macbooks">Mac</Link></li>
+                    <li className='safe' onMouseOver={handleDropdownItems}><Link onMouseOver={handleDropdownItems} className='safe' to="">iPad</Link></li>
+                    <li className='safe' onMouseOver={handleDropdownItems}><Link onMouseOver={handleDropdownItems} className='safe' to="">iPhone</Link></li>
+                    <li className='safe' onMouseOver={handleDropdownItems}><Link onMouseOver={handleDropdownItems} className='safe' to="">Watch</Link></li>
+                    <li className='safe' onMouseOver={handleDropdownItems}><Link onMouseOver={handleDropdownItems} className='safe' to="">Vision</Link></li>
+                    <li className='safe' onMouseOver={handleDropdownItems}><Link onMouseOver={handleDropdownItems} className='safe' to="">AirPods</Link></li>
+                    <li className='safe' onMouseOver={handleDropdownItems}><Link onMouseOver={handleDropdownItems} className='safe' to="">TV & Home</Link></li>
+                    <li className='safe' onMouseOver={handleDropdownItems}><Link onMouseOver={handleDropdownItems} className='safe' to="">Entertainment</Link></li>
+                    <li className='safe' onMouseOver={handleDropdownItems}><Link onMouseOver={handleDropdownItems} className='safe' to="">Accessories</Link></li>
+                    <li className='safe' onMouseOver={handleDropdownItems}><Link onMouseOver={handleDropdownItems} className='safe' to="">Support</Link></li>
                 </ul>
 
 
@@ -50,7 +135,11 @@ function NavBar() {
             </nav>
 
             <div className={`modal ${dropdown ? 'visible' : ''}`}>
-                <div className={`dropdown-container safe ${dropdown ? 'visible' : '' }`}></div>
+                <div className={`dropdown-container safe ${dropdown ? 'visible' : '' }`}>
+                    <div id='dropdown-item-container' className='safe'>
+
+                    </div>
+                </div>
             </div>
         </>
     )
