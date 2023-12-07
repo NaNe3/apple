@@ -15,8 +15,13 @@ function NavBar() {
         if (targetClass.includes("safe") == false) {
             setDropdown(false)
             document.removeEventListener("mouseover", checkMouse)
+            // setTimeout(() => {
+            //     document.getElementsByClassName('modal')[0].style.display = "none"
+            // }, 600)
+            // document.getElementsByClassName('modal')[0].style.display = "none"
         } else if (dropdown == false) {
             setDropdown(true)
+            // document.getElementsByClassName('modal')[0].style.display = "block"
         }
     }
 
@@ -44,7 +49,7 @@ function NavBar() {
                 <Link to="/"><img src='./src/assets/cart.png' /></Link>
             </nav>
 
-            <div className='modal' style={dropdown ? {display: "block"} : {display: "none"}}>
+            <div className={`modal ${dropdown ? 'visible' : ''}`}>
                 <div className={`dropdown-container safe ${dropdown ? 'visible' : '' }`}></div>
             </div>
         </>
