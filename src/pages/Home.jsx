@@ -5,7 +5,7 @@ function Home() {
     return (
         <div className='home-container'>
             <div className='big-img-view'>
-                <img src='./src/assets/phone-huge.png'></img>
+                <img src='./src/assets/iphone-banner.png'></img>
 
                 <div className='view-info'>
                     <h1>iPhone 15</h1>

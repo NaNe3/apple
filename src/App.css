@@ -1,7 +1,6 @@
 #root {
   width: 100%;
   max-width: 100%;
-  overflow: hidden;
   min-height: 100vh;
 }
 
@@ -194,11 +193,13 @@ footer {
   background-color: rgba(0, 0, 0, 0);
   backdrop-filter: blur(0px);
   transition: 0.4s;
+  pointer-events: none;
 }
 
 .modal.visible {
   background-color: rgba(0, 0, 0, .2);
   backdrop-filter: blur(40px);
+  pointer-events: auto;
 }
 
 .dropdown-container {
@@ -213,7 +214,7 @@ footer {
 }
 
 .dropdown-container.visible {
-  height: 400px;
+  height: 500px;
 }
 
 .dropdown-container:not(.visible) {

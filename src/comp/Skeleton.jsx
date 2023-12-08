@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import React, { useEffect, useState } from 'react'
+import { Link } from "react-router-dom";
 
 
 function NavBar() {
@@ -57,7 +57,11 @@ function NavBar() {
     ]
 
     const handleDropdownItems = (e) => {
-        var id = e.target.children[0].innerHTML;
+        if (!dropdown) {
+            drop()
+        }
+
+        var id = e.target.innerHTML;
         var index = -1;
         for (var i=0; i<dropInfo.length; i++) {
             if (dropInfo[i].id == id) {
@@ -93,12 +97,12 @@ function NavBar() {
         }
     }
 
+
     const [dropdown, setDropdown] = useState(false)
     const drop = () => {
         document.addEventListener("mousemove", checkMouse)
-
     }
-
+    
     const checkMouse = (e) => {
         var targetClass = e.target.className
         console.log(targetClass)
@@ -114,19 +118,20 @@ function NavBar() {
         <>
             <nav style={ dropdown ? { backgroundColor: "rgba(249, 249, 251, 1)"} : { backgroundColor: "rgba(249, 249, 251, 0.8)"}}>
                 <Link to="/"><img src={'./src/assets/apple.png'} /></Link>
+                {/* onMouseOver={ dropdown ? console.log("already open fool") : drop }> */}
 
-                <ul className='links safe' onMouseOver={ dropdown ? console.log("already open fool") : drop }>
-                    <li className='safe' onMouseOver={handleDropdownItems}><Link onMouseOver={handleDropdownItems} className='safe' to="/Store">Store</Link></li>
-                    <li className='safe' onMouseOver={handleDropdownItems}><Link onMouseOver={handleDropdownItems} className='safe' to="/Macbooks">Mac</Link></li>
-                    <li className='safe' onMouseOver={handleDropdownItems}><Link onMouseOver={handleDropdownItems} className='safe' to="">iPad</Link></li>
-                    <li className='safe' onMouseOver={handleDropdownItems}><Link onMouseOver={handleDropdownItems} className='safe' to="">iPhone</Link></li>
-                    <li className='safe' onMouseOver={handleDropdownItems}><Link onMouseOver={handleDropdownItems} className='safe' to="">Watch</Link></li>
-                    <li className='safe' onMouseOver={handleDropdownItems}><Link onMouseOver={handleDropdownItems} className='safe' to="">Vision</Link></li>
-                    <li className='safe' onMouseOver={handleDropdownItems}><Link onMouseOver={handleDropdownItems} className='safe' to="">AirPods</Link></li>
-                    <li className='safe' onMouseOver={handleDropdownItems}><Link onMouseOver={handleDropdownItems} className='safe' to="">TV & Home</Link></li>
-                    <li className='safe' onMouseOver={handleDropdownItems}><Link onMouseOver={handleDropdownItems} className='safe' to="">Entertainment</Link></li>
-                    <li className='safe' onMouseOver={handleDropdownItems}><Link onMouseOver={handleDropdownItems} className='safe' to="">Accessories</Link></li>
-                    <li className='safe' onMouseOver={handleDropdownItems}><Link onMouseOver={handleDropdownItems} className='safe' to="">Support</Link></li>
+                <ul className='links safe'> 
+                    <li className='safe'><Link onMouseOver={handleDropdownItems} className='safe' to="/Store">Store</Link></li>
+                    <li className='safe'><Link onMouseOver={handleDropdownItems} className='safe' to="/Macbooks">Mac</Link></li>
+                    <li className='safe'><Link onMouseOver={handleDropdownItems} className='safe' to="">iPad</Link></li>
+                    <li className='safe'><Link onMouseOver={handleDropdownItems} className='safe' to="">iPhone</Link></li>
+                    <li className='safe'><Link onMouseOver={handleDropdownItems} className='safe' to="">Watch</Link></li>
+                    <li><Link onMouseOver={handleDropdownItems} to="">Vision</Link></li>
+                    <li className='safe'><Link onMouseOver={handleDropdownItems} className='safe' to="">AirPods</Link></li>
+                    <li className='safe'><Link onMouseOver={handleDropdownItems} className='safe' to="">TV & Home</Link></li>
+                    <li className='safe'><Link onMouseOver={handleDropdownItems} className='safe' to="">Entertainment</Link></li>
+                    <li className='safe'><Link onMouseOver={handleDropdownItems} className='safe' to="">Accessories</Link></li>
+                    <li className='safe'><Link onMouseOver={handleDropdownItems} className='safe' to="">Support</Link></li>
                 </ul>
 
 

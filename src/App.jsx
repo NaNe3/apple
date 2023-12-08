@@ -7,10 +7,12 @@ import Store from './pages/Store'
 import Macbooks from './pages/Macbooks'
 
 import { NavBar, Footer } from './comp/Skeleton'
+// import Scroll from './comp/Scroll'
 
 function App() {
   return (
     <div id='parent'>
+      {/* <Scroll/> */}
       <BrowserRouter>
 
         <NavBar />
