@@ -101,6 +101,7 @@
 }
 
 .slide-item {
+    position: relative;
     display: inline-block;
     margin: 20px 10px 20px 10px;
     width: 480px;
@@ -118,6 +119,35 @@
     height: 510px;
     margin: -20px 5px 14px 5px;
     box-shadow: 0px 0px 4px 5px rgba(190, 190, 190, 0.4);
+}
+
+.slide-item:hover .slide-info {
+    padding: 12px 32px;
+}
+
+.slide-info {
+    position: absolute;
+    color: black;
+    padding: 10px 30px;
+    transition: 0.4s;
+}
+
+.slide-info p {
+    color: grey;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 25px;
+}
+
+.slide-info h2 {
+    font-size: 28px;
+    line-height: 0px;
+    font-weight: 600;
+}
+
+.slide-info h3 {
+    font-size: 18px;
+    font-weight: 400;
 }
 
 .slide-item img {

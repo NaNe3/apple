@@ -16,6 +16,18 @@ function Home() {
                     </div>
                 </div>
             </div>
+            <div className='big-img-view'>
+                <img src='./src/assets/gifts-big.png'></img>
+
+                <div className='view-info'>
+                    <h1></h1>
+                    <p></p>
+                    <div className='view-options'>
+                        <a></a> <span> &gt;</span>
+                        <a></a><span> &gt;</span>
+                    </div>
+                </div>
+            </div>
 
             <div className='med-container'>
                 <div className='med-img-view'>
