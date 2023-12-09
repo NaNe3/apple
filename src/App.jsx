@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import './App.css'
 
@@ -10,6 +10,10 @@ import { NavBar, Footer } from './comp/Skeleton'
 // import Scroll from './comp/Scroll'
 
 function App() {
+  useEffect(() => {
+    document.title = "Apple"
+  }, [])
+
   return (
     <div id='parent'>
       {/* <Scroll/> */}

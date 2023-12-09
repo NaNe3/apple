@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Home.css'
 
 function Home() { 
+    useEffect(() => {
+        document.title = "Apple"
+    }, [])
+
     return (
         <div className='home-container'>
             <div className='big-img-view'>

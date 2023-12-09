@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Store.css'
 
 function Store() {
+    useEffect(() => {
+        document.title = "Apple Store Online - Apple"
+    }, [])
+
     return (
         <div id='store-container'>
             <div className='full-page'>

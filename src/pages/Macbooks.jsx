@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 function Macbooks() {
+    useEffect(() => {
+        document.title = "Mac - Apple"
+    }, [])
+
     return (
         <div className='macbooks-container'>
             <div className='product-display'>
