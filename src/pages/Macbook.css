@@ -1,0 +1,11 @@
+.banner-info {
+    width: 100%;
+    color: black;
+    text-align: center;
+    background-color: #F5F5F7;
+    border: 1px solid black;
+    font-size: 15px;
+
+    padding: 0px;
+    margin: 0px;
+}
