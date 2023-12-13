@@ -4,6 +4,7 @@ import './Store.css'
 function Store() {
     useEffect(() => {
         document.title = "Apple Store Online - Apple"
+        window.scrollTo(0, 0)
     }, [])
 
     return (

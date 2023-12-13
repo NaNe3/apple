@@ -3,9 +3,80 @@
     color: black;
     text-align: center;
     background-color: #F5F5F7;
-    border: 1px solid black;
     font-size: 15px;
 
     padding: 0px;
     margin: 0px;
+}
+
+.banner-info p {
+    margin: 0px;
+    padding: 15px;
+}
+
+.section {
+    width: 100%;
+    background-color: white;
+}
+
+.section-header {
+    width: 100%;
+    color: black;
+    padding: 0px 140px;
+}
+
+.section-header h3 {
+    font-size: 76px;
+    font-weight: 600;
+    margin: 0px;
+    padding: 0px;
+}
+
+.slide-container {
+    width: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    padding: 0px 140px;
+    white-space: nowrap;
+    overflow-x: auto;
+    justify-content: space-around;
+}
+
+.tall-slide {
+    width: 400px;
+    height: 90vh;
+    background-color: blue;
+    border-radius: 30px;
+
+    margin-right: 10px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.slide-info {
+    position: absolute;
+    color: black;
+    padding: 10px 30px;
+    transition: 0.4s;
+}
+
+.slide-info p {
+    color: grey;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 25px;
+}
+
+.slide-info h2 {
+    font-size: 28px;
+    line-height: 0px;
+    font-weight: 600;
+}
+
+.slide-info h3 {
+    font-size: 18px;
+    font-weight: 400;
 }

@@ -4,6 +4,7 @@ import './Home.css'
 function Home() { 
     useEffect(() => {
         document.title = "Apple"
+        window.scrollTo(0, 0)
     }, [])
 
     return (

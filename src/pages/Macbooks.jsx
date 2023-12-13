@@ -4,6 +4,7 @@ import './Macbook.css'
 function Macbooks() {
     useEffect(() => {
         document.title = "Mac - Apple"
+        window.scrollTo(0, 0)
     }, [])
 
     return (
@@ -80,6 +81,51 @@ function Macbooks() {
 
             <div className='banner-info'>
                 <p>Get your holiday gifts on time. See when to order</p>
+            </div>
+
+            <div className='section slide-container'>
+                <div className='section-header'>
+                    <h3>Get to know Mac.</h3>
+                </div>
+
+                <div className='slide'>
+                    <div className='tall-slide'>
+                        <img src='./src/assets/Macbook/slide-1.png' />
+                        <div className='slide-info'>
+                            <h3>MacBook Air</h3>
+                            <p>Power. It’s in the Air.</p>
+                        </div>
+                    </div>
+                    <div className='tall-slide'>
+                        <img src='./src/assets/Macbook/slide-2.png' />
+                        <div className='slide-info'>
+                            <h3>MacBook Pro</h3>
+                            <p>Supercharged for pros.</p>
+                        </div>
+                    </div>
+                    <div className='tall-slide'>
+                        <img src='./src/assets/Macbook/slide-3.png' />
+                        <div className='slide-info'>
+                            <h3>iMac</h3>
+                            <p>Say hello.</p>
+                        </div>
+                    </div>
+                    <div className='tall-slide'>
+                        <img src='./src/assets/Macbook/slide-4.png' />
+                        <div className='slide-info'>
+                            <h3>Mac mini</h3>
+                            <p>Mighty. Small.</p>
+                        </div>
+                    </div>
+                    <div className='tall-slide'>
+                        <img src='./src/assets/Macbook/slide-5.png' />
+                        <div className='slide-info'>
+                            <h3>Mac Pro</h3>
+                            <p>Power to change everything.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     )
