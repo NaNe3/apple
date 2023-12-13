@@ -240,6 +240,18 @@ footer {
 .product h2 { font-size: 13px; font-weight: 400; line-height: 0px; margin-top: 5px; }
 .product h3 { color: crimson; font-size: 11px; font-weight: 400; line-height: 10px; }
 
+button {
+  background-color: #0371e2;
+  padding: 0px 25px;
+  height: 50px;
+  font-size: 16px;
+  color: white;
+  border-radius: 10000px;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 @media (max-width: 1100px) {
   .links { display: none; }
   .modal { display: none; }

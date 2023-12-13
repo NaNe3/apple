@@ -17,16 +17,19 @@
 .section {
     width: 100%;
     background-color: white;
+
+    margin: 0;
+    padding: 100px 0px 200px 0px;
 }
 
 .section-header {
     width: 100%;
     color: black;
-    padding: 0px 140px;
+    padding: 40px 90px;
 }
 
 .section-header h3 {
-    font-size: 76px;
+    font-size: 55px;
     font-weight: 600;
     margin: 0px;
     padding: 0px;
@@ -38,7 +41,7 @@
 
 .slide {
     min-width: 100%;
-    padding: 0px 140px;
+    padding: 0px 90px;
     white-space: nowrap;
     overflow-x: auto;
     justify-content: space-around;
@@ -46,14 +49,23 @@
 
 .tall-slide {
     width: 400px;
-    height: 90vh;
+    height: 95vh;
     background-color: blue;
     border-radius: 30px;
+    overflow: hidden;
 
     margin-right: 10px;
     display: inline-block;
     position: relative;
     cursor: pointer;
+}
+
+.tall-slide img {
+    width: 100%;
+    height: auto;
+
+    margin-top: -100px;
+
 }
 
 .slide-info {
@@ -80,3 +92,137 @@
     font-size: 18px;
     font-weight: 400;
 }
+
+.selecter {
+    display: inline-block;
+    margin: 40px 0px 60px 0px;
+    padding: 5px;
+    margin-left: 90px;
+    background-color: white;
+    border-radius: 100000px;
+    color: grey;
+
+    cursor: pointer;
+}
+
+.selecter p {
+    display: inline-block;
+    padding: 18px 30px;
+    margin: 0;
+    line-height: 5px;
+    border-radius: 10000px;
+    font-size: 18px;
+}
+
+.selecter p.sel-ected {
+    background-color: black;
+    color: white;
+}
+
+.macs {
+    display: inline-block;
+    width: 100%;
+}
+
+.mac {
+    display: inline-block;
+    width: 350px;
+    height: 600px;
+    color: black;
+    text-align: center;
+}
+
+.mac-info {
+    display: block;
+    border-bottom: 1px solid lightgray;
+    width: 350px;
+}
+
+.mac-info img {
+    width: 100%;
+}
+
+.mac-info h6 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 0px;
+    margin: 10px 0px 0px 0px;
+    padding: 0;
+}
+
+.mac-info h5 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 20px;
+}
+
+.mac-info p {
+    font-size: 17px;
+    font-weight: 400;
+    text-align: center;
+    white-space: normal;
+    word-wrap: break-word;
+
+    padding: 0px 30px;
+}
+ 
+.mac-info h3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.mac-actions {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0px;
+}
+
+.mac-actions p {
+    color: #0266CC;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 10px;
+    padding: 0px 10px;
+}
+
+.mac-actions p:hover {
+    text-decoration: underline;
+}
+
+.mac-details {
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.mac-detail { margin-top: 50px; }
+.mac-detail img { width: 40px; border-radius: 10px;}
+
+.mac-details .big {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 0px;
+}
+
+.mac-details .small {
+    font-size: 12px;
+    font-weight: 400;
+    padding: 0px 15px;
+}
+
+.colors {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 40px 0px;
+}
+
+.color {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 100000px;
+    margin: 3px;
+    border: 1px solid rgba(0,0,0, 0.4);
+}
+
