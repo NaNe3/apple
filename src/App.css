@@ -234,6 +234,7 @@ footer {
   text-align: center;
   margin: 0 10px;
   cursor: pointer;
+  animation : product-display-fadeIn 0.5s ease-in-out;
 }
 
 .product img { width: 100%; margin: 0; padding: 0; }
@@ -262,3 +263,15 @@ button {
   }
   
 }
+
+@keyframes product-display-fadeIn {
+    from { 
+      opacity: 0; 
+      transform: translateX(150px);
+    }
+    to { 
+      opacity: 1; 
+      transform: translateX(0px);
+    }
+}
+

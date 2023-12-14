@@ -1,11 +1,30 @@
 import React, { useEffect } from 'react'
 import './Macbook.css'
 
-function Macbooks() {
+function Macbooks() { 
     useEffect(() => {
         document.title = "Mac - Apple"
         window.scrollTo(0, 0)
+
+        const watchScroll = document.addEventListener('scroll', () => {
+            checkElements()
+        })
+        checkElements()
+
+        return () => {
+            document.removeEventListener('scroll', watchScroll)
+        }
     }, [])
+
+    const checkElements = () => {
+        const scrollWatchList = document.querySelectorAll('.fadeIn')
+        for (let i=0; i<scrollWatchList.length; i++) {
+            const position = scrollWatchList[i].getBoundingClientRect()
+            if (position.top < window.innerHeight) {
+                scrollWatchList[i].classList.add('fadeUp')
+            }
+        }
+    }
 
     const handleSelection = (e) => {
         const selected = document.querySelector('.sel-ected')
@@ -17,7 +36,7 @@ function Macbooks() {
         <div className='macbooks-container'>
             <div className='product-display'>
                 <div className='product'>
-                    <img src='./src/assets/Macbook/product-air.' />
+                    <img src='./src/assets/Macbook/product-air.png' />
                     <h2>MacBook Air</h2>
                     <h3></h3>
 
@@ -90,11 +109,11 @@ function Macbooks() {
             </div>
 
             <div className='section slide-container'>
-                <div className='section-header'>
+                <div className='section-header fadeIn'>
                     <h3>Get to know Mac.</h3>
                 </div>
 
-                <div className='slide'>
+                <div className='slide fadeIn'>
                     <div className='tall-slide'>
                         <img src='https://www.apple.com/v/mac/home/bx/images/overview/consider/mac_ease__bvgkz2zdltxy_large_2x.jpg' />
                         <div className='slide-info'>
@@ -148,17 +167,17 @@ function Macbooks() {
             </div>
 
             <div className='section slide-container' style={{ backgroundColor: '#fafafa' }}>
-                <div className='section-header'>
+                <div className='section-header fadeIn'>
                     <h3>Explore the lineup.</h3>
                 </div>
 
-                <div className='selecter'>
+                <div className='selecter fadeIn'>
                     <p className='sel-ected' onClick={handleSelection}>Laptops</p>
                     <p onClick={handleSelection}>Desktops</p>
                     <p onClick={handleSelection}>Displays</p>
                 </div>
 
-                <div className='slide macs'>
+                <div className='slide macs fadeIn'>
                     
 
                     <div className='mac'>
